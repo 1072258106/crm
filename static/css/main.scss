@@ -1,0 +1,535 @@
+@import "main.config";
+
+*{margin:0;padding:0;}
+html,body,#app{
+    width:100%;
+    height:100%;
+}
+body{
+    font-family:"Helvetica Neue",Helvetica, "microsoft yahei", arial, STHeiTi, sans-serif;
+}
+a{text-decoration: none; color: #008fff}
+li{list-style: none;}
+header {
+    position: absolute;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    box-sizing: border-box;
+}
+.menu {
+    height: 100%;
+}
+.content-body{
+    height: 100%;
+    background-color: #F1F1F1;
+    overflow-y: scroll;
+}
+.content{
+    
+    padding:24px;
+    height: 100%;
+    box-sizing: border-box;
+}
+.container {
+    padding-top: 64px;
+}
+.container, .wrapper{
+    height:100%;
+}
+ .wrapper {
+    position: relative;
+}
+.float-right {
+    float: right;
+}
+.text-center {
+    text-align: center;
+}
+.text-right {
+    text-align: right;
+}
+.text-danger {
+    color: #FF4949 !important;
+}
+.text-primary {
+    color: #2db7f5 !important;
+}
+.text-bold{
+    font-weight: bold;
+}
+
+.tz-alert{
+    padding:$commonSpace;
+    border-radius:$borderRadius;
+    font-size:$font;
+    color:$color;
+    &.primary {
+        border:1px solid #d4f0fc;
+        background-color:$color_primary;
+    }
+    &.success {
+        &>i {
+            color: #00A854;
+        }
+        border:1px solid #DAf0d0;
+        background-color: #EDF8E8;
+        color: #999;
+    }
+    &.tiny {
+        padding:0px 10px !important;
+        font-size: 12px;
+    }
+}
+
+.tz-panel {
+    padding:$commonSpace;
+    background-color: #fff;
+    &>h4{
+        color:#666666;
+        margin-bottom: 20px;
+    }
+}
+.panel{
+    margin-bottom: 16px;
+    background-color: #fff;
+    .panel-heading {
+        padding: 16px;
+        border-bottom: 1px solid transparent;
+        border-top-left-radius: 3px;
+        border-top-right-radius: 3px;
+    }
+    .panel-body{
+       padding: 16px;
+    }
+}
+.panel-default {
+    
+    &>.panel-heading {
+        color: #333;
+        font-weight: bold;
+        
+        border-color: #e4e4e4;
+    }
+}
+
+.el-dialog__body {
+    overflow: auto;
+}
+.margin-bottom-20 {
+    margin-bottom:$commonSpace !important;
+}
+.margin-top-20 {
+    margin-top:$commonSpace !important;
+}
+
+
+.set-table{
+    height:546px;
+    border:1px solid #e4e4e4;
+    background:#fff;
+    .set-top{
+        height:489px;
+        border-bottom:1px solid #e4e4e4;
+        .switch{
+            height:45px;
+            border-bottom:1px solid #e4e4e4;
+            .switch-txt{
+                height:45px;
+                line-height:45px;
+                font-size:16px;
+                color:#666;
+                font-weight:bold;
+                text-align:center;
+                border-right:1px solid #e4e4e4;
+            }
+            .switch-btn{
+                height:45px;
+                line-height:45px;
+                text-indent:1em;
+            }
+        }
+        .condition{
+            height:130px;
+            border-bottom:1px solid #e4e4e4;
+            .condition-txt{
+                height:130px;
+                line-height:130px;
+                font-size:16px;
+                color:#666;
+                font-weight:bold;
+                text-align:center;
+                border-right:1px solid #e4e4e4;
+            }
+            .condition-set{
+                .money{
+                    width:79px;
+                    height:26px;
+                }
+                .area{
+                    width:318px;
+                    height:26px;
+                }
+                &>p {
+                    margin-left:30px;
+                    font-size:14px;
+                    color:#666;
+                    line-height:35px;
+                    &>a{
+                        margin-left:30px;
+                        color:#008fff;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.checkbox,
+.filterbox {
+    display: inline-block;
+    img {
+        vertical-align: middle;
+    }
+}
+
+.set-table .set-bottom{
+    height:56px;
+    background:#e6f3fc;
+    border-bottom:1px solid #e4e4e4;
+}
+.set-table .set-bottom .save{
+    float:right;
+    margin-right:15px;
+    margin-top:10px;
+}
+.top16 {
+    margin-top:16px;
+}
+.bottom16{
+    margin-bottom: 16px;
+}
+.seachBg {
+    padding: 16px;
+    color: #666;
+    background-color: #fff;
+    overflow: auto;
+}
+.footer{
+    font-size:14px;
+    color:#ccc;
+    height:43px;
+    text-align:center;
+    line-height:43px;
+}
+/*    商品设置穿梭框
+--------------------------*/
+$imageSize:48px;
+$gutter:4px;
+$titleWidth:120px;
+.my-transfer {
+    .el-transfer-panel:last-child {
+        width: 222px;   
+    }
+    .el-transfer-panel__item {
+        width: 200px;
+        height: $imageSize;
+        line-height: $imageSize;
+        display: inline-block;
+        .el-checkbox__input {
+            top:15px;
+        }
+        .item-span {    
+            .image{
+                margin: 0px;
+                padding: 0px;
+                width: $imageSize;
+                height: $imageSize;
+                border-radius: 4px;
+                vertical-align: middle;
+                border: 0;
+            }
+            &>a{
+                display: inline-block;
+                margin-right: $gutter;
+                vertical-align: middle;
+            }
+            .title{
+                display: inline-block;
+                vertical-align: middle;
+                width: $titleWidth;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                white-space: nowrap;
+            }
+        
+        }
+    }
+    
+}
+@media (max-width:1460px) {
+    .my-transfer>.el-transfer-panel:first-child {
+        width: 222px;           
+    }
+}
+
+@media (min-width:1460px) {
+    .my-transfer>.el-transfer-panel:first-child {
+        width: 442px;           
+    }
+}
+@media  (min-width: 1850px) {
+    .my-transfer>.el-transfer-panel:first-child {
+            width: 662px;           
+    }
+    
+}
+.my-transfer-luban{
+    .el-transfer-panel:first-child {
+        width: 65%;
+        
+    }
+    .el-transfer-panel:last-child {
+        width: 25%;   
+    }
+    .el-transfer__buttons{
+        width: 8%;
+        box-sizing: border-box;
+        padding:0;
+        .el-button{
+            width: 90%;
+        }
+    }
+}
+.item-select-pannel {
+    z-index: 100;
+    background-color: #fff;
+}
+
+.is-error {
+    .el-input__inner {
+        border-color: #ff4949;
+    }
+    .help-text {
+        color: #ff4949 !important;
+    }
+}
+.editable {
+    span {
+        color: #cc0066;
+    }
+    a {
+        color: #cc0066;
+    }
+}
+
+.el-tabs__header .el-tabs__item.is-active {
+    border-bottom: 1px solid #f4f4f4 !important;
+}
+
+.table{
+    border-spacing: 0px;
+}
+
+.clear {
+    &:after {
+        clear: both;
+        content: '';
+        display: block;
+        width: 0;
+        height: 0;
+        visibility: hidden;
+    }
+}
+
+/* responsive-utilities
+---------------------------*/
+.visible-lg-block,.visible-lg-inline,.visible-lg-inline-block {
+    display: none !important;
+}
+
+@media (min-width: 800px) {
+    .visible-lg-block {
+        display: block !important;    
+    }
+    .visible-lg-inline {
+        display: inline !important;
+    }
+    .visible-lg-inline-block {
+        display: inline-block !important;
+    }
+        
+}
+
+
+/* 配置显示
+-----------------------------*/
+.help-block {
+    line-height: 30px;
+    color: #ccc;
+    font-size: 14px;
+}
+
+.sub-title {
+    text-align: left;
+    vertical-align: middle;
+    float: left;
+    font-size: 14px;
+    color: #666;
+    // font-weight: bold;
+    line-height: 1;
+    padding: 8px 16px 8px 0;
+    box-sizing: border-box;
+    width: 86px;
+}
+
+.sub-body {
+    line-height: 36px;
+    position: relative;
+    font-size: 14px;
+    margin-left: 86px;
+    padding: 1px 0px;
+    &:after {
+        clear: both;
+        content: '';
+        display: block;
+        width: 0;
+        height: 0;
+        visibility: hidden;
+    }
+}
+
+/* 搜索框对齐问题
+------------------------*/
+.search_item {
+    font-size: 14px;
+    &>label {
+        padding: 8px 16px 8px 0px;
+        float: left;
+        &+div {
+            margin-left: 86px;
+            &>.el-select {
+                width: 100%;
+            }
+        }
+    }
+}
+
+
+/* 设置table
+-------------------------*/
+$border_color: #e4e4e4;
+$font_color:#666;
+.table-default {
+    &.border{
+        border:1px solid #e4e4e4;
+    }
+    width: 100%;
+    color: $font_color;
+    background-color: #fff;
+    border-radius: 4px;
+    border-collapse:collapse;
+    &>tr {
+        &+tr{
+            border-top: 1px solid $border_color;
+        }
+        &>td {
+            padding: 8px 16px;
+
+        }
+        // &:last-child {
+        //     background-color: #E6F3FC;
+        // }
+    }
+}
+
+
+/* 表格外面加白色背景
+-------------------------------*/
+.table-container {
+    background-color: #fff;
+    padding:16px;
+}
+
+/* 统计的数字加上颜色
+-------------------------------*/
+.count-span-red{
+    color:red;
+}
+.count-span-green{
+    color:green;
+}
+.count-span-orange{
+    color:orange;
+}
+.count-span-blue{
+    color:#20a0ff;
+}
+
+/* 弹框设置最大高度，内容时出现滚动条
+-------------------------------*/
+.el-dialog__body{
+    max-height: 415px;
+    overflow-y: auto;
+}
+
+
+/* 穿梭框居中
+-------------------------------*/
+.my-transfer{
+    text-align: center;
+}
+.my-transfer>div{
+    text-align: left;
+}
+
+/* 发送测试样式
+-------------------------------*/
+.sub-body .el-input-group__append{
+    color: #fff;
+    background-color: #20a0ff;
+    border-color: #20a0ff;
+}
+.sub-body .el-input-group__append:hover{
+    background: rgb(77, 179, 255);
+    border-color: rgb(77, 179, 255);
+    color: #fff;
+}
+
+
+.table-container{
+    position: relative;
+    margin-bottom: 50px;
+}
+.fixed-row{
+    position: fixed;
+    bottom:0;
+    right: 40px;
+    background: rgba(42, 45, 43, 0.7);
+    box-sizing: border-box;
+
+}
+.fixed-row-send{
+    padding:8px 16px;
+}
+.fixed-row>td{
+    display: block;
+}
+// .fixed-row .el-button{
+//     background-color:#ff4949;
+//     border: 1px solid #fff;
+// }
+// .fixed-row .el-button:hover{
+//     background-color:#e84444;
+//     border: 1px solid #fff;
+// }
+.fixed-row .sub-title{
+    color:#fff;
+    height: 38px;
+    line-height: 38px;
+    padding:0 0 0 16px;
+}
+.fixed-row .send-time{
+    color:#fff;
+}
